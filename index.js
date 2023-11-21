@@ -1,31 +1,31 @@
-let userdata = document.getElementById("user-data");
+let userdata1 = document.getElementById("user-data");
 
-const getdata = () => {
-  let displaydataget = localStorage.getItem("user_entries");
+const GETDATA = () => {
+  let DISPLAYDATAGET = localStorage.getItem("user_entries");
 
-  if (displaydataget) {
-    displaydataget = JSON.parse(displaydataget);
+  if (DISPLAYDATAGET) {
+    DISPLAYDATAGET = JSON.parse(DISPLAYDATAGET);
   } else {
-    displaydataget = [];
+    DISPLAYDATAGET = [];
   }
 
-  return displaydataget;
+  return DISPLAYDATAGET;
 };
 
-let user_entries = getdata();
+let user_entries = GETDATA();
 
 const displaydata = () => {
-  const displaydataget = getdata();
+  const DISPLAYDATAGET = GETDATA();
 
-  const tabledata = displaydataget
+  const tabledata = DISPLAYDATAGET
     .map((entrydata) => {
-      const namefield = `<td >${entrydata.name}</td>`;
-      const emailfield = `<td >${entrydata.email}</td>`;
+      const NAMEFIELD = `<td >${entrydata.NAME}</td>`;
+      const EMAILFIELD = `<td >${entrydata.EMAIL}</td>`;
       const passwordfield = `<td >${entrydata.password}</td>`;
       const dobfield = `<td >${entrydata.dob}</td>`;
       const tcfield = `<td >${entrydata.tc}</td>`;
 
-      const rowfield = `<tr> ${namefield} ${emailfield} ${passwordfield} ${dobfield} ${tcfield} </tr>`;
+      const rowfield = `<tr> ${NAMEFIELD} ${EMAILFIELD} ${passwordfield} ${dobfield} ${tcfield} </tr>`;
 
       return rowfield;
     })
@@ -33,8 +33,8 @@ const displaydata = () => {
 
   const table = `<table  class = "table-auto w-full" ><tr>
   
-  <th >Name</th>
-  <th >Email</th>
+  <th >NAME</th>
+  <th >EMAIL</th>
   <th >Password</th>
   <th >Dob</th>
   <th >Accepted terms?</th>
@@ -46,12 +46,12 @@ const displaydata = () => {
   details.innerHTML = table;
 };
 
-const saveuserdata = (event) => {
+const saveuserdata1 = (event) => {
   event.preventDefault();
 
-  const name = document.getElementById("name").value;
+  const NAME = document.getElementById("NAME").value;
 
-  const email = document.getElementById("email").value;
+  const EMAIL = document.getElementById("EMAIL").value;
 
   const password = document.getElementById("password").value;
 
@@ -60,8 +60,8 @@ const saveuserdata = (event) => {
   const tc = document.getElementById("tc").checked;
 
   const entry = {
-    name,
-    email,
+    NAME,
+    EMAIL,
     password,
     dob,
     tc,
@@ -74,22 +74,22 @@ const saveuserdata = (event) => {
   displaydata();
 };
 
-userdata.addEventListener("submit", saveuserdata);
+userdata1.addEventListener("submit", saveuserdata1);
 displaydata();
 
-const email = document.getElementById("email");
+const EMAIL = document.getElementById("EMAIL");
 
-email.addEventListener("input", () => valid(email));
+EMAIL.addEventListener("input", () => valid(EMAIL));
 
 const sub = document.getElementById("sbutton");
 
-sub.addEventListener("click", () => valid(email));
+sub.addEventListener("click", () => valid(EMAIL));
 
 function valid(element) {
-  const checkemail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+  const checkEMAIL = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
-  if (email.value == "" || !checkemail.test(email.value)) {
-    element.setCustomValidity("The Email is not correct ");
+  if (EMAIL.value == "" || !checkEMAIL.test(EMAIL.value)) {
+    element.setCustomValidity("The EMAIL is not correct ");
     element.reportValidity();
   } else {
     element.setCustomValidity("");
