@@ -1,77 +1,119 @@
- body
-  {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: white
-  }
- .spacing1
- {
-    padding: 50px;
- }
- .container1
- {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 1rem;
-    border: 1px solid gray ;
-    box-shadow: 100px black;
-    border-radius: 0.5rem;
-    background:white;
- }
- h1
- {
-    text-align: center;
- }  
- form
- {
-    display: flex;
-    flex-direction: column;
- }  
- label
- {
-    font-weight: bold;
- }
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  input[type="date"] 
-  {
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border-radius: 0.25rem;
-    border: none;
-    box-shadow: 0 0 0 1px gray;
-  }
-  input[type="checkbox"]
-  {
-    margin-right: 0.5rem;
-  }
-  button
-  {
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    border: none;
-    background-color: orange;
-    color: yellow;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
-  table
-  {
-    margin-top: 2rem;
-    border-collapse: collapse;
-    width: 80%;
-    border: 1px black;
-    margin: 0 auto;
-    background-color:white;
-  }
-  th,td
-  {
-    border: 1px solid rgb(0, 0, 0);
-    padding: 0.5rem;
-    text-align: left;
-  }
-  
-  
-  
+.full {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 89%;
+  margin: 49px 49px;
+}
+
+#sbutton {
+  border-radius: 12px;
+  margin-top: 9px;
+  margin-left: 149px;
+  border: 4px;
+  font-size: 19px;
+  width: 89px;
+  height: 49px;
+}
+
+.indataelem input {
+  height: 29px;
+  width: 239px;
+  font-size: 15px;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+#intc {
+  font-size: 18px;
+  padding-top: 19px;
+  padding-left: 19px;
+}
+
+#intc input {
+  border-radius: 3px;
+  margin-top: 9px;
+  height: 19px;
+  width: 19px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+input:invalid:focus {
+  border: 1px solid red;
+}
+
+.indataelem {
+  font-size: 19px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: left;
+  padding-right: 19px;
+  padding-top: 29px;
+  padding-left: 19px;
+}
+
+.indatamain {
+  padding: 25px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: left;
+  border-radius: 10px;
+  width: 499px;
+  height: 499px;
+  margin-right: 20px; 
+}
+
+.downblock {
+  padding: 25px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-start;
+  align-items: left;
+  border-radius: 10px;
+  width: 499px;
+  height: auto;
+  background-color: #f1f1f1; 
+  margin-left: 50px; 
+}
+
+.downblock h2 {
+  margin-bottom: 20px; 
+}
+
+.output {
+  display: grid;
+  grid-template-columns: repeat(2, 4fr);
+  grid-column-gap: 30px;
+
+  padding: 10px; 
+}
+
+.output div {
+  border: 1px solid black; 
+  padding: 10px; 
+}
+
+.output label {
+  font-weight: bold; 
+}
+
+.output span {
+  font-weight: normal; 
+}
+
+td,
+th {
+  border: 0.1px solid black;
+  padding: 12px;
+  width: 10px;
+  text-align: left;
+}
